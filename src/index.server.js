@@ -23,6 +23,11 @@ app.use(express.json());
 app.use('/api/v1', itemRoutes);
 app.use('/api/v1', cartRoutes);
 
+app.get('/',(req,res) => {
+    res.status(200).json({
+      message:'Welcome To Our Site'
+    })
+  })
 
 app.listen(process.env.PORT,()=>{
     console.log(`Running OUR PORT is ${process.env.PORT}`);
